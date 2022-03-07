@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.Poll{
+  text-align: center;
+  color:white;
+  background-color:#3B28CC;
+  height: 8vmin;
+  font-size: x-large;
+  object-fit: cover;
+  width: auto;
+}
+
+.card{
+  width: 18rem;
+  margin-left: 10rem;
+}
+.fill img {
+  object-fit: cover;
+  width: auto;
+  height: auto;
+}
+.benefits{
+  
+  
+}
+
+.benefits img {
+  border-style: solid;
+  border-width: medium;
+  margin-top: 1rem;
+  maargin-bottom: 1rem;
+  width: auto;
+}
+
+.footer{
+  background-color: #0D6EFD;
+  color: white;
+}
+
+.Dashboard{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color:white;
+  background-color:#3B28CC;
+  height: 8vmin;
+  font-size: x-large;
+  object-fit: cover;
+  width: auto;
+}
+
+.Votecard{
+  margin-bottom: 5rem;
+  margin-left: 5rem;
+  width: auto;
+}
