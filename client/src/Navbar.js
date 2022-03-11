@@ -1,34 +1,35 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 function Navbar () {
     return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
             Vote Block
           </a>
           
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to='/' className="nav-link active" aria-current="page">
                   Home
-                </a>
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
+              <li className="nav-item">
+                <a className="nav-link active" href="#Dashboard">
                   Dashboard
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  Login
-                </a>
+              <li className="nav-item">
+                <Link to='/Results' className="nav-link active">
+                  Results
+                </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
+              <li className="nav-item">
+                <Link to='/AddCandidate' className="nav-link active">
                   Admin
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

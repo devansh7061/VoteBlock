@@ -1,15 +1,16 @@
 import React from "react";
+import CandidateCard from "./Candidate";
 
 function Home() {
   return (
     <div>
-      <div class="fill">
+      <div className="fill">
         <img src="images/first.jpg"></img>
       </div>
-      <div class="Poll">
+      <div className="Poll">
         <p>Basic framework of the blockchain voting system</p>
       </div>
-      <div class="benefits">
+      <div className="benefits">
         <center>
           <img src="images/4.png"></img>
         </center>
