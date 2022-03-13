@@ -87,12 +87,13 @@ class AddCandidate extends Component {
       );
     }
     return (
-      <>
+      <body className="background-blue">
         <NavbarAdmin />
+        <br></br>
         <h1 className="heading-title">Add Candidate</h1>
         <div className="form">
           <FormGroup>
-            <div className="form-label">Enter Name - </div>
+            <div className="form-label">Enter Name</div>
             <div className="form-input">
               <FormControl
                 input="text"
@@ -102,7 +103,7 @@ class AddCandidate extends Component {
             </div>
           </FormGroup>
           <FormGroup>
-            <div className="form-label">Enter Details - </div>
+            <div className="form-label">Enter Details</div>
             <div className="form-input">
               <FormControl
                 input="text"
@@ -112,12 +113,12 @@ class AddCandidate extends Component {
             </div>
           </FormGroup>
           <div className="vote-button">
-            <Button onClick={this.addCandidate} className="button-Vote">
+            <Button onClick={this.addCandidate} className="btn btn-lg w-100 btn-primary">
               Add
             </Button>
           </div>
         </div>
-      </>
+      </body>
     );
   }
 }

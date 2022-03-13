@@ -132,8 +132,9 @@ class AddVoter extends Component {
 
 
         return (
-            <div className="App">
+            <div className="App background-blue">
             {this.state.isOwner ? <NavbarAdmin />: <Navbar />}
+            <br></br>
             <div className="CandidateDetails">
               <div className="CandidateDetails-title">
                 <h1 className="heading-title">
@@ -146,7 +147,7 @@ class AddVoter extends Component {
         
             <div className="form">
             <FormGroup>
-                <div className="form-label">Enter Name - </div>
+                <div className="form-label">Enter Name</div>
                 <div className="form-input">
                   <FormControl  
                       input = 'text'
@@ -157,7 +158,7 @@ class AddVoter extends Component {
             </FormGroup>
         
             <FormGroup>
-                <div className="form-label">Enter Voter ID - </div>
+                <div className="form-label">Enter Voter ID</div>
                 <div className="form-input">
                   <FormControl
                       input = 'textArea'
@@ -168,7 +169,7 @@ class AddVoter extends Component {
             </FormGroup>
         
             <FormGroup>
-                <div className="form-label">Enter Voter Address - </div>
+                <div className="form-label">Enter Voter Address</div>
                 <div className="form-input">
                   <FormControl
                       input = 'text'
@@ -177,7 +178,7 @@ class AddVoter extends Component {
                   />
                 </div>
             </FormGroup>
-            <Button onClick={this.addVoter}  className="button-vote">
+            <Button onClick={this.addVoter}  className="btn btn-lg w-100 btn-primary">
               Add Voter
             </Button>
             </div>

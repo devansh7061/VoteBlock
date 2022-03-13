@@ -21,6 +21,22 @@
   color: #09d3ac;
 }
 
+/* body{
+  align-items : center;
+  background-color: #add7f6;
+} */
+
+html, body, body > div, .app{
+  height:100%;
+  width:100%;
+}
+
+.background-blue{
+  background-color: #add7f6;
+  width: 100%;
+  height: 100%;
+}
+
 .Poll{
   text-align: center;
   color:white;
@@ -45,7 +61,30 @@
 .card{
   width: 18rem;
   margin-left: 10rem;
+  display: flex;
+  flex-wrap: "wrap";
+  margin-top: 2 rem;
 }
+
+.column{
+  float:left;
+  width:25%;
+  padding: 0 20px;
+}
+
+.img-cand{
+  height:90px;
+  width:90px;
+}
+
+.h5{
+  marigin-bottom:none;
+}
+
+.winner{
+  margin-left:10rem;
+}
+
 .fill img {
   object-fit: cover;
   width: auto;
@@ -81,6 +120,10 @@
   width: auto;
 }
 
+.text-center{
+  text-align:center;
+}
+
 .Votecard{
   margin-bottom: 5rem;
   margin-left: 5rem;
@@ -90,7 +133,8 @@
 .form{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 60%;
+  width: 50%;
+  height:auto;
   margin: auto;
   
 }
@@ -101,13 +145,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  bottom:none;
+  top:100px;
   font-size: calc(10px + 2vmin);
 }
 
 .form-input{
   color: #eeeeee;
-  padding-top: 10px;
+  padding-top: none;
   padding-bottom: 10px;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   font-size: 18px;
   font-family: initial;
 }

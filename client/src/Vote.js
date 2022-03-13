@@ -3,7 +3,8 @@ import VotingContract from "./contracts/VotingContract.json";
 import getWeb3 from "./getWeb3";
 import Navbar from "./Navbar";
 import NavbarAdmin from "./NavbarAdmin";
-import { FormGroup, FormControl, Button } from 'react-bootstrap';
+import { FormGroup, FormControl, Button, Card } from "react-bootstrap";
+import img from "./img_avatar.png";
 
 class Vote extends Component {
   state = {
@@ -57,9 +58,10 @@ class Vote extends Component {
         account: accounts[0],
       });
 
-     let myAccount = await this.state.VotingInstance.methods
-    .voterAddresses(this.state.accounts)
-    this.setState({ myAccount: myAccount });
+      let myAccount = await this.state.VotingInstance.methods.voterAddresses(
+        this.state.accounts
+      );
+      this.setState({ myAccount: myAccount });
 
       let candidateCount = await this.state.VotingInstance.methods
         .getCandidateCount()
@@ -74,7 +76,9 @@ class Vote extends Component {
       }
       this.setState({ candidateLists: candidateList });
 
-      let start = await this.state.VotingInstance.methods.electionStatus().call();
+      let start = await this.state.VotingInstance.methods
+        .electionStatus()
+        .call();
 
       this.setState({ start: start });
 
@@ -94,17 +98,53 @@ class Vote extends Component {
   render() {
     let candidateList;
     if (this.state.candidateLists) {
-      candidateList = this.state.candidateLists.map((candidate, candidateId) => {
-        return (
-          <div className="candidate" key={candidateId}>
-            <div className="candidateName">{candidate.name}</div>
-            <div className="candidateDetails">
-              <div >Details : {candidate.details}</div>
-              <div>Candidate ID : {candidate.candidateId}</div>
+      candidateList = this.state.candidateLists.map(
+        (candidate, candidateId) => {
+          return (
+            <div className="candidate" key={candidateId}>
+            <img src={img} className="img-cand" alt="..." />
+              <h5 className="candidateName">{candidate.name}</h5>
+              <div className="candidateDetails">
+                <div>Candidate ID : {candidate.candidateId}</div>
+                <div>Details : {candidate.details}</div>
+              </div>
+              <br></br>
+              <br></br>
+              {/* <div className="row">
+                <div class="col-sm-6 col-lg-6">
+                  <div class="card" className="card">
+                    <img src={img} class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <h5 class="card-title">{candidate.name}</h5>
+                      <div>Candidate ID : {candidate.candidateId}</div>
+                      <div>Details : {candidate.details}</div>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <br></br>
+              </div> */}
+              {/* <div className="row text-center">
+                <div className="column"></div>
+                <Card style={{ width: "18rem" }}>
+                  <Card.Img variant="top" src={img} />
+                  <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                  </Card.Body>
+                </Card>
+              </div> */}
             </div>
-          </div>
-        );
-      });
+          );
+        }
+      );
     }
 
     if (!this.state.web3) {
@@ -129,7 +169,6 @@ class Vote extends Component {
           <div className="CandidateDetails-sub-title">
             Please Wait.....While election starts !
           </div>
-          
         </div>
       );
     }
@@ -165,22 +204,20 @@ class Vote extends Component {
     }
 
     return (
-      <div className="App">
+      <div className="App text-center background-blue">
         {/* <div>{this.state.owner}</div> */}
         {/* <p>Account address - {this.state.account}</p> */}
-        {this.state.isOwner ? <NavbarAdmin /> : <Navbar
-         />}
+        {this.state.isOwner ? <NavbarAdmin /> : <Navbar />}
         <div className="CandidateDetails">
           <div className="CandidateDetails-title">
             <h1>VOTE</h1>
           </div>
         </div>
-        
 
         <div className="form">
           <FormGroup>
             <div className="form-label">
-              Enter Candidate ID you want to vote {" "}
+              Enter Candidate ID you want to vote{" "}
             </div>
             <div className="form-input">
               <FormControl
@@ -195,6 +232,7 @@ class Vote extends Component {
             </Button>
           </FormGroup>
         </div>
+        <br></br>
 
         {/* <Button onClick={this.getCandidates}>
               Get Name
@@ -205,10 +243,6 @@ class Vote extends Component {
         ) : (
           ""
         )}
-
-        <div className="PollResult">
-          Candidates from your Constituency
-        </div>
 
         <div>{candidateList}</div>
       </div>

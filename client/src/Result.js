@@ -103,17 +103,18 @@ class Result extends Component {
     }
 
     return (
-      <>
+      <div className="background-blue">
         <Navbar />
-        <div className="vote-button">
+        <div className="vote-button text-center">
             <Button onClick={this.result} className="button-Vote">
               View Results
             </Button>
           </div>
-        <div className="winner">
+        <br></br>
+        <div className="h5 winner">
             <p>The winner is {this.state.result}</p>
         </div>
-      </>
+      </div>
     );
   }
 }

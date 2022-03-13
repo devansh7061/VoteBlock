@@ -97,7 +97,7 @@ class StartPoll extends Component {
       );
     }
     return (
-      <>
+      <body className="text-center background-blue">
         <NavbarAdmin />
         <div className="admin-buttons">
           {this.state.start ? (
@@ -120,12 +120,12 @@ class StartPoll extends Component {
               End Election
             </Button>
           ) : (
-            <Button onClick={this.endElection} className="admin-buttons-end-e">
+            <Button onClick={this.endElection} className="admin-buttons-end-e btn-danger">
               End Election
             </Button>
           )}
         </div>
-      </>
+      </body>
     );
   }
 }
